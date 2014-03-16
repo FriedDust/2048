@@ -1,0 +1,156 @@
+.game-container {
+	position: relative;
+}
+
+#debug {
+	float:right;
+	width: 400px;
+	border: 1px solid;
+}
+
+.sanobox {
+	float:left;
+	width:50px;
+	height:50px;
+	border:1px solid;
+}
+
+.grid-container {
+	position: absolute;
+}
+
+
+.grid-row {
+  margin-bottom: 15px;
+}
+
+.grid-row:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.grid-cell {
+  width: 106.25px;
+  height: 106.25px;
+  margin-right: 15px;
+  float: left;
+  border-radius: 3px;
+  background: rgba(238, 228, 218, 0.35); }
+
+.grid-cell:last-child {
+    margin-right: 0;
+}
+
+.tile {
+	position: absolute;
+	-webkit-animation: appear 0ms ease 100ms;
+	-webkit-transition: all 0.3s;
+}
+
+.tile, .tile .tile-inner {
+  width: 107px;
+  height: 107px;
+  line-height: 116.25px; 
+}
+  
+  
+  
+.tile .tile-inner {
+    border-radius: 3px;
+    background: #eee4da;
+    text-align: center;
+    font-weight: bold;
+    z-index: 10;
+/*    font-size: 55px;*/
+		font-size: 25px; 
+}  
+
+
+.tile-position-1-1 {
+	-webkit-transform: translate(0px, 0px);
+}
+
+.tile-position-2-1 {
+	-webkit-transform: translate(121px, 0px);
+}
+
+.tile-position-3-1 {
+	-webkit-transform: translate(242px, 0px);
+}
+
+.tile-position-4-1 {
+	-webkit-transform: translate(362px, 0px);
+}
+
+
+
+.tile-position-1-2 {
+	-webkit-transform: translate(0px, 121px);
+}
+
+.tile-position-2-2 {
+	-webkit-transform: translate(121px, 121px);
+}
+
+.tile-position-3-2 {
+	-webkit-transform: translate(242px, 121px);
+}
+
+.tile-position-4-2 {
+	-webkit-transform: translate(362px, 121px);
+}
+
+
+
+
+.tile-position-1-3 {
+	-webkit-transform: translate(0px, 242px);
+}
+
+.tile-position-2-3 {
+	-webkit-transform: translate(121px, 242px);
+}
+
+.tile-position-3-3 {
+	-webkit-transform: translate(242px, 242px);
+}
+
+.tile-position-4-3 {
+	-webkit-transform: translate(362px, 242px);
+}
+
+
+
+.tile-position-1-4 {
+	-webkit-transform: translate(0px, 362px);
+}
+
+.tile-position-2-4 {
+	-webkit-transform: translate(121px, 362px);
+}
+
+.tile-position-3-4 {
+	-webkit-transform: translate(242px, 362px);
+}
+
+.tile-position-4-4 {
+	-webkit-transform: translate(362px, 362px);
+}
+
+
+
+
+
+
+@-webkit-keyframes appear {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+  } 
+}
