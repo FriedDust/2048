@@ -19,6 +19,27 @@ function Game() {
 				that.processInput(key);
 			}
 		});
+		
+		var key = 0;
+		$("#hitarea").swipe({
+			swipeLeft: function(event, direction, distance, fingerCount) {
+				key = that.left;
+				that.processInput(key);
+			},
+			swipeRight: function(event, direction, distance, fingerCount) {
+				key = that.right;
+				that.processInput(key);
+			},
+			swipeUp: function(event, direction, distance, fingerCount) {
+				key = that.up;
+				that.processInput(key);
+			},
+			swipeDown: function(event, direction, distance, fingerCount) {
+				key = that.down;
+				that.processInput(key);
+			},
+			threshold: 0
+		});
 	});
 }
 
@@ -48,6 +69,7 @@ Game.prototype.processInput = function(key) {
 	var moved = false;
 	
 	var vector = self.getVector(key);
+	console.log('vec', vector);
 	
 	var xcells = [];
 	var ycells = [];
@@ -101,7 +123,7 @@ Game.prototype.processInput = function(key) {
 	});
 	
 	if (moved) {
-	self.addRandomTile();
+		self.addRandomTile();
 		self.renderer.render(xcells, ycells);
 		
 	}
@@ -128,7 +150,6 @@ Game.prototype.findEndPosition = function(tile, vector) {
 		
 		prev = temp;
 		var newPos = {x: prev.x + vector.x, y: prev.y + vector.y};
-		if (tile.id == 3) console.log(this.grid.cells);
 		
 		if (!this.grid.isValidPosition(newPos.x, newPos.y)) { // check out of bounds
 			return temp;

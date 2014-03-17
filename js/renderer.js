@@ -10,7 +10,6 @@ Renderer.prototype.debug = function() {
 	$("#debug").html("");
 	var boxes = $("<div>");
 	
-	this.grid.print();
 	for (var y=0; y< this.grid.cols; y++) {
 		for (var x=0; x < this.grid.cols; x++) {
 			var tile = this.grid.cells[x][y];
@@ -25,7 +24,7 @@ Renderer.prototype.debug = function() {
 		boxes.append("<br clear='all'>");
 	}
 	$("#debug").append(boxes);
-	$(".score-container").html(this.game.score);
+	$(".score-container").html("Score : " + this.game.score);
 }
 
 Renderer.prototype.initRender = function() {
